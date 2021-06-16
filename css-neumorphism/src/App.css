@@ -1,0 +1,488 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: row;
+}
+
+.body1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #edf1f4;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.Loader{
+  display: flex;
+  flex-direction: row;
+}
+
+.Loader div{
+  position: relative;
+  width: 40px;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05,#edf1f4));
+  border: 2px solid #edf1f4;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+   -15px -15px 20px #fff,
+    inset -5px -5px 5px rgba(255,255,266,0.5),
+    inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.Loader div:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 40px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+   -15px -15px 20px #fff,
+    inset -5px -5px 5px rgba(255,255,266,0.5),
+    inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.Loader div:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2),
+  0 420px 0 400px #2196f3;
+  animation: animate 2.5s ease-in-out infinite;
+  transform: translateY(160px);
+  animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(160px);
+    filter: hue-rotate(180deg);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(160px);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.Clock{
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(clock.png);
+  background-size: cover;
+  border: 2px solid #edf1f4;
+  border-radius: 50%;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff,
+   inset -5px -5px 5px rgba(255,255,266,0.5),
+   inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.Clock:before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #091921;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.Clock .Hour, .Clock .Min, .Clock .Sec{
+  position: absolute;
+}
+
+.Clock .Hour, .Hr{
+  width: 160px;
+  height: 160px;
+}
+
+.Clock .Min, .Mn{
+  width: 190px;
+  height: 190px;
+}
+
+.Clock .Sec, .Sc{
+  width: 230px;
+  height: 230px;
+}
+
+.Hr, .Mn, .Sc{
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  position: absolute;
+  border-radius: 50%;
+}
+
+.Hr:before{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+.Mn:before{
+  content: '';
+  position: absolute;  
+  width: 4px;
+  height: 90px;
+  background: #091921;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+.Sc:before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #091921;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+.azito1{
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #5a84a2;
+  font-size: 18px;
+  border-radius: 40px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff,
+   inset -5px -5px 5px rgba(255,255,266,0.5),
+   inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.azito1:hover{
+  box-shadow: inset 15px 15px 20px rgba(0,0,0,0.1),
+  inset -15px -15px 20px #fff,
+   inset -5px -5px 5px rgba(255,255,266,0.5),
+   inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.azito1:hover span{
+  display: inline-block;
+  transform: scale(0.98);
+}
+
+.azito1:active {
+  box-shadow: inset 15px 15px 20px rgba(0,0,0,0.1),
+  inset -15px -15px 20px #edf1f4,
+   inset -5px -5px 5px rgba(255,255,266,0.5),
+   inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.azito1:active span{
+  display: inline-block;
+  transform: scale(0.98);
+}
+
+.IconsBody{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #18191f;
+  min-width: 100vh;
+}
+
+.IconsNeon div{
+  position: relative;
+  list-style: none;
+}
+
+.IconsNeon div b{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background: #18191f;
+  line-height: 55px;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 15px;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+  3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.IconsNeon div b .Fafire,
+.IconsNeon div b .GiMetalBar,
+.IconsNeon div b .GiCutDiamond{
+  font-size: 66px;
+  color: #555;
+}
+
+.IconsNeon div b:hover .Fafire{
+  color: #f00;
+  text-shadow: 0 0 15px #f00;
+}
+
+.IconsNeon div b:hover .GiMetalBar{
+  color: #0f0;
+  text-shadow: 0 0 15px #0f0;
+}
+
+.IconsNeon div b:hover .GiCutDiamond{
+  color: #00f3ff;
+  text-shadow: 0 0 15px #00f3ff;
+}
+
+.IconsNeon{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Clock1{
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(clock.png);
+  background-size: cover;
+  border: 2px solid #18191f;
+  border-radius: 50%;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+  3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.Clock1:before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #edf1f4;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.Clock1 .Hour1, .Clock1 .Min1, .Clock1 .Sec1{
+  position: absolute;
+}
+
+.Clock1 .Hour1, .Hr1{
+  width: 160px;
+  height: 160px;
+}
+
+.Clock1 .Min1, .Mn1{
+  width: 190px;
+  height: 190px;
+}
+
+.Clock1 .Sec1, .Sc1{
+  width: 230px;
+  height: 230px;
+}
+
+.Hr1, .Mn1, .Sc1{
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  position: absolute;
+  border-radius: 50%;
+}
+
+.Hr1:before{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+.Mn1:before{
+  content: '';
+  position: absolute;  
+  width: 4px;
+  height: 90px;
+  background: #edf1f4;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+.Sc1:before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #edf1f4;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+.Loader1{
+  display: flex;
+  flex-direction: row;
+}
+
+.Loader1 div{
+  position: relative;
+  width: 40px;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05,#18191f));
+  border: 2px solid #18191f;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+  3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.Loader1 div:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 40px;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+  3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.Loader1 div:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background: #555;
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 1px rgba(0,0,0,0.05),
+  0 420px 0 400px #2196f3;
+  animation: animate 2.5s ease-in-out infinite;
+  transform: translateY(160px);
+  animation-delay: calc(-0.5s * var(--i));
+}
+
+.azito2{
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #555;
+  font-size: 18px;
+  border-radius: 40px;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+  3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.azito2:hover{
+  box-shadow: inset -2px -2px 3px rgba(255,255,255,0.05),
+  inset 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.azito2:hover span{
+  display: inline-block;
+  transform: scale(0.98);
+}
+
+.azito2:active {
+  box-shadow: inset -2px -2px 3px rgba(255,255,255,0.05),
+  inset -3px -3px 8px #18191f,
+  inset -2px -2px 2px rgba(255,255,266,0.2),
+  inset 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.azito2:active span{
+  display: inline-block;
+  transform: scale(0.98);
+}
+
+.IconsNeon1 div{
+  position: relative;
+  list-style: none;
+}
+
+.IconsNeon1 div b{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background: #edf1f4;
+  line-height: 55px;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 15px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff,
+   inset -5px -5px 5px rgba(255,255,266,0.5),
+   inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+
+.IconsNeon1 div b .Fafire1,
+.IconsNeon1 div b .GiMetalBar1,
+.IconsNeon1 div b .GiCutDiamond1{
+  font-size: 66px;
+  color: #5a84a2;
+}
+
+.IconsNeon1 div b:hover .Fafire1{
+  color: #f00;
+  text-shadow: 0 0 15px #f00;
+}
+
+.IconsNeon1 div b:hover .GiMetalBar1{
+  color: #0f0;
+  text-shadow: 0 0 15px #0f0;
+}
+
+.IconsNeon1 div b:hover .GiCutDiamond1{
+  color: #00f3ff;
+  text-shadow: 0 0 15px #00f3ff;
+}
+
+.IconsNeon1{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
